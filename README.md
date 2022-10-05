@@ -2,36 +2,62 @@
 ### 请在本目录下或者本文件下提交项目代码/截图:
 
 计1907李牧霖: 我在等着我的小学弟/学妹们提交文件~
-<html>
-    <head>
-        <title>绿荫工作室面试作业</title>
-    </head>
-    <body>
-         <h1>绿荫工作室面试作业</h1>
-            <h2>计划:</h2>
-                <h3>短期的计划</h3>
-                    <p>学高等数学，学精算法，过四六级，专业第一，拿奖学金。</p>
-                <h3>长期的计划</h3>
-                    <p>考研，找工作，生活</p>
-                <h3>人生的计划</h3>
-                    <p>留下——留下故事，留下传说。</p >
-            <h2>期望:</h2>
-                <h3>对组织的期望</h3>
-                    <p>团结友爱，创新进取，对待新人，还请不吝赐教</p>
-                <h3>对自己的期望</h3>
-                    <p>不要求自己能够成为一个完美的六边形战士，希望能在计算机的世界里点缀满天星辰。</p>
-            <h2>观后感：</h2>
-                    <p>不得不感叹人与人的差距，读了已交五人的作业。
-                        他们与我而言，正如星光灿烂对荧光微微，实在是不可同年而语矣。
-                        学习环境到家庭条件的原因，使我落后太多了。
-                        畏惧与迷茫，让我萌发了放弃的念头。
-                        我的确没有底气去和他们竞争什么，那我就奔跑着追赶他们吧！
-                        终究会有那么一天的，我相信。因为，我，是追赶的人</p>
-    <hr>
-    <text>智能2201 马庭宇</text>
-     <dip>
-     <dip>
-    </body>
-</html>
-      
-![image](https://user-images.githubusercontent.com/115072803/194130362-c034cea7-b91a-4e28-9ea1-fc30075e09cc.png)
+#include <iostream>
+#include <string>
+using namespace std;
+//二、进行排序 
+//冒泡排序
+void bubbling_sorting(int arr[], int len)
+{
+	//冒1 外循环
+	for (int i = 0; i < len - 1; i++)
+	{
+		// 冒2 内循环
+		for (int j = 0; j < len - i - 1; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			//冒3 交换
+			{
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+//三、打印数组
+void printInto(int arr[], int len)
+{
+
+	for (int k = 0; k < len; k++)
+	{
+		cout << arr[k] << "  ";
+	}
+	cout << endl;
+}
+int main()
+{
+	//一、输入数字
+	//建立数组
+	const int len = 5;
+	int arr[len] ;
+	int a = 0;
+	int b = 0;
+	//插入数字
+	cout << "请输入"  << len << "个正整数" << endl;
+	while (cin >> a)
+	{
+		arr[b] = a;
+		if (b < len - 1 )
+			b++;
+		else
+			break;
+	}
+	cout << "排序前为：";
+	printInto(arr, len);
+	bubbling_sorting(arr, len);
+	cout << "排序后为：";
+	printInto(arr, len);
+}
+
+//思想：相邻 比较 若大 交换 循环  
